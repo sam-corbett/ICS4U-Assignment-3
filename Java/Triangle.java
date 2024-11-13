@@ -1,5 +1,9 @@
 /**
- * Class representing a triangle.
+ * The 'Triangle' Class.
+ *
+ * @author: Sam Corbett
+ * @version: 1.0
+ * @since: 2024/11/13
  */
 public class Triangle {
     private double side1;
