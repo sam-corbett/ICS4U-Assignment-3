@@ -1,182 +1,221 @@
-import java.text.DecimalFormat;
-
 /**
- * The Main code that runs the 'Triangle' Class.
+ * The 'Triangle' Class.
  *
  * @author: Sam Corbett
  * @version: 1.0
  * @since: 2024/11/13
  */
-public final class Main {
+public class Triangle {
     /**
-     * Prevent instantiation.
-     * Throw an exception IllegalStateException if this ever is called.
-     *
-     * @throws IllegalStateException if instantiation is attempted.
+     * The length of the first side.
      */
-    private Main() {
-        throw new IllegalStateException("Cannot be instantiated");
+    private double side1;
+
+    /**
+     * The length of the second side.
+     */
+    private double side2;
+    /**
+     * The length of the third side.
+     */
+    private double side3;
+
+    /**
+     * Create a triangle.
+     * @param side1Paramater - The length of the first side.
+     * @param side2Paramater - The length of the second side.
+     * @param side3Paramater - The length of the third side.
+     */
+    public Triangle(
+        final double side1Paramater,
+        final double side2Paramater,
+        final double side3Paramater
+        ) {
+        this.side1 = side1Paramater;
+        this.side2 = side2Paramater;
+        this.side3 = side3Paramater;
+    }
+
+
+    /**
+     * Get the length of the first side.
+     * @return The length of the first side.
+     */
+    public double getSide1() {
+        return side1;
     }
 
     /**
-     * The main method.
-     * @param args Command line arguments.
+     * Get the length of the second side.
+     * @return The length of the second side.
      */
-    public static void main(final String[] args) {
-        DecimalFormat df = new DecimalFormat("#.####");
+    public double getSide2() {
+        return side2;
+    }
 
-        System.out.println("");
+    /**
+     * Get the length of the third side.
+     * @return The length of the third side.
+     */
+    public double getSide3() {
+        return side3;
+    }
 
-        // Test Triangle #1
-        Triangle testTriangle1 = new Triangle(3, 4, 5);
-        System.out.println("Test #1:");
-        System.out.println("Created a 3 mm by 4 mm by 5 mm triangle.");
-        System.out.println(" → Is the triangle valid: "
-                + testTriangle1.isValid());
-        System.out.println(" → Semiperimeter: "
-                + df.format(testTriangle1.semiPerimeter()) + " mm");
-        System.out.println(" → Area: "
-                + df.format(testTriangle1.area()) + " mm²");
-        System.out.println(" → Type: "
-                + testTriangle1.getType());
-        System.out.println(" → Angle 1: "
-                + df.format(testTriangle1.angle(1)) + " rad");
-        System.out.println(" → Angle 2: "
-                + df.format(testTriangle1.angle(2)) + " rad");
-        System.out.println(" → Angle 3: "
-                + df.format(testTriangle1.angle(3)) + " rad");
-        System.out.println(" → Height 1: "
-                + df.format(testTriangle1.height(1)) + " mm");
-        System.out.println(" → Height 2: "
-                + df.format(testTriangle1.height(2)) + " mm");
-        System.out.println(" → Height 3: "
-                + df.format(testTriangle1.height(3)) + " mm");
-        System.out.println(" → Inner circle radius: "
-                + df.format(testTriangle1.innerCircleRadius()) + " mm");
-        System.out.println(" → Circumcircle radius: "
-                + df.format(testTriangle1.circumsicleRadius()) + " mm");
-        System.out.println("");
+    /**
+     * Calculate the perimeter of the triangle.
+     * @return The perimeter of the triangle.
+     */
+    private double perimeter() {
+        return side1 + side2 + side3;
+    }
 
-        // Test Triangle #2
-        Triangle testTriangle2 = new Triangle(3, 3, 3);
-        System.out.println("Test #2:");
-        System.out.println("Created a 3 mm by 3 mm by 3 mm triangle.");
-        System.out.println(" → Is the triangle valid: "
-                + testTriangle2.isValid());
-        System.out.println(" → Semiperimeter: "
-                + df.format(testTriangle2.semiPerimeter()) + " mm");
-        System.out.println(" → Area: "
-                + df.format(testTriangle2.area()) + " mm²");
-        System.out.println(" → Type: "
-                + testTriangle2.getType());
-        System.out.println(" → Angle 1: "
-                + df.format(testTriangle2.angle(1)) + " rad");
-        System.out.println(" → Angle 2: "
-                + df.format(testTriangle2.angle(2)) + " rad");
-        System.out.println(" → Angle 3: "
-                + df.format(testTriangle2.angle(3)) + " rad");
-        System.out.println(" → Height 1: "
-                + df.format(testTriangle2.height(1)) + " mm");
-        System.out.println(" → Height 2: "
-                + df.format(testTriangle2.height(2)) + " mm");
-        System.out.println(" → Height 3: "
-                + df.format(testTriangle2.height(3)) + " mm");
-        System.out.println(" → Inner circle radius: "
-                + df.format(testTriangle2.innerCircleRadius()) + " mm");
-        System.out.println(" → Circumcircle radius: "
-                + df.format(testTriangle2.circumsicleRadius()) + " mm");
-        System.out.println("");
+    /**
+     * Check if the triangle is valid.
+     * @return True if the triangle is valid, false otherwise.
+     */
+    public boolean isValid() {
+        return (side1 + side2 > side3
+                && side2 + side3 > side1
+                && side3 + side1 > side2);
+    }
 
-        // Test Triangle #3
-        Triangle testTriangle3 = new Triangle(3, 4, 4);
-        System.out.println("Test #3:");
-        System.out.println("Created a 3 mm by 4 mm by 4 mm triangle.");
-        System.out.println(" → Is the triangle valid: "
-                + testTriangle3.isValid());
-        System.out.println(" → Semiperimeter: "
-                + df.format(testTriangle3.semiPerimeter()) + " mm");
-        System.out.println(" → Area: "
-                + df.format(testTriangle3.area()) + " mm²");
-        System.out.println(" → Type: "
-                + testTriangle3.getType());
-        System.out.println(" → Angle 1: "
-                + df.format(testTriangle3.angle(1)) + " rad");
-        System.out.println(" → Angle 2: "
-                + df.format(testTriangle3.angle(2)) + " rad");
-        System.out.println(" → Angle 3: "
-                + df.format(testTriangle3.angle(3)) + " rad");
-        System.out.println(" → Height 1: "
-                + df.format(testTriangle3.height(1)) + " mm");
-        System.out.println(" → Height 2: "
-                + df.format(testTriangle3.height(2)) + " mm");
-        System.out.println(" → Height 3: "
-                + df.format(testTriangle3.height(3)) + " mm");
-        System.out.println(" → Inner circle radius: "
-                + df.format(testTriangle3.innerCircleRadius()) + " mm");
-        System.out.println(" → Circumcircle radius: "
-                + df.format(testTriangle3.circumsicleRadius()) + " mm");
-        System.out.println("");
+    /**
+     * Calculate the area of the triangle.
+     * @return The area of the triangle, or -1 if the triangle is not valid.
+     */
+    public double area() {
+        if (!isValid()) {
+            return -1;
+        }
+        double semiPerimeter = semiPerimeter();
+        return Math.sqrt(semiPerimeter * (semiPerimeter - side1)
+                * (semiPerimeter - side2) * (semiPerimeter - side3));
+    }
 
-        // Test Triangle #4
-        Triangle testTriangle4 = new Triangle(2, 3, 4);
-        System.out.println("Test #4:");
-        System.out.println("Created a 2 mm by 3 mm by 4 mm triangle.");
-        System.out.println(" → Is the triangle valid: "
-                + testTriangle4.isValid());
-        System.out.println(" → Semiperimeter: "
-                + df.format(testTriangle4.semiPerimeter()) + " mm");
-        System.out.println(" → Area: "
-                + df.format(testTriangle4.area()) + " mm²");
-        System.out.println(" → Type: "
-                + testTriangle4.getType());
-        System.out.println(" → Angle 1: "
-                + df.format(testTriangle4.angle(1)) + " rad");
-        System.out.println(" → Angle 2: "
-                + df.format(testTriangle4.angle(2)) + " rad");
-        System.out.println(" → Angle 3: "
-                + df.format(testTriangle4.angle(3)) + " rad");
-        System.out.println(" → Height 1: "
-                + df.format(testTriangle4.height(1)) + " mm");
-        System.out.println(" → Height 2: "
-                + df.format(testTriangle4.height(2)) + " mm");
-        System.out.println(" → Height 3: "
-                + df.format(testTriangle4.height(3)) + " mm");
-        System.out.println(" → Inner circle radius: "
-                + df.format(testTriangle4.innerCircleRadius()) + " mm");
-        System.out.println(" → Circumcircle radius: "
-                + df.format(testTriangle4.circumsicleRadius()) + " mm");
-        System.out.println("");
+    /**
+     * Get the type of the triangle.
+     * @return The type of the triangle.
+     */
+    public String getType() {
+        if (!isValid()) {
+            return "Invalid";
+        } else if (side1 == side2 && side2 == side3) {
+            return "Equilateral";
+        } else if (side1 == side2 || side2 == side3
+                   || side3 == side1) {
+            if (isRightAngle()) {
+                return "Right angle and Isosceles";
+            } else {
+                return "Isosceles";
+            }
+        } else {
+            if (isRightAngle()) {
+                return "Right angle and Scalene";
+            } else {
+                return "Scalene";
+            }
+        }
+    }
 
-        // Test Triangle #5
-        Triangle testTriangle5 = new Triangle(23, 4, 6);
-        System.out.println("Test #5:");
-        System.out.println("Created a 23 mm by 3 mm by 4 mm triangle.");
-        System.out.println(" → Is the triangle valid: "
-                + testTriangle5.isValid());
-        System.out.println(" → Semiperimeter: "
-                + df.format(testTriangle5.semiPerimeter()) + " mm");
-        System.out.println(" → Area: "
-                + df.format(testTriangle5.area()) + " mm²");
-        System.out.println(" → Type: "
-                + testTriangle5.getType());
-        System.out.println(" → Angle 1: "
-                + df.format(testTriangle5.angle(1)) + " rad");
-        System.out.println(" → Angle 2: "
-                + df.format(testTriangle5.angle(2)) + " rad");
-        System.out.println(" → Angle 3: "
-                + df.format(testTriangle5.angle(3)) + " rad");
-        System.out.println(" → Height 1: "
-                + df.format(testTriangle5.height(1)) + " mm");
-        System.out.println(" → Height 2: "
-                + df.format(testTriangle5.height(2)) + " mm");
-        System.out.println(" → Height 3: "
-                + df.format(testTriangle5.height(3)) + " mm");
-        System.out.println(" → Inner circle radius: "
-                + df.format(testTriangle5.innerCircleRadius()) + " mm");
-        System.out.println(" → Circumcircle radius: "
-                + df.format(testTriangle5.circumsicleRadius()) + " mm");
-        System.out.println("");
+    /**
+     * Check if the triangle is a right angle triangle.
+     * @return True if the triangle is a right angle triangle,
+     * false otherwise.
+     */
+    // a2, b2, and c2 are square of each side
+    private boolean isRightAngle() {
+        double a2 = side1 * side1;
+        double b2 = side2 * side2;
+        double c2 = side3 * side3;
+        return (a2 + b2 == c2
+                || b2 + c2 == a2
+                || c2 + a2 == b2);
+    }
 
-        System.out.println("\nDone.");
+    /**
+     * Calculate the semi-perimeter of the triangle.
+     * @return The semi-perimeter of the triangle.
+     */
+    public double semiPerimeter() {
+        if (!isValid()) {
+            return -1;
+        }
+        return perimeter() / 2;
+    }
+
+    /**
+     * Calculate the specified angle of the triangle.
+     * @param angleNumber - The angle number (1, 2, or 3).
+     * @return The angle in radians, or -1 if the triangle is not valid.
+     */
+    public double angle(final int angleNumber) {
+        if (!isValid()) {
+            return -1;
+        }
+        double a2 = side1 * side1;
+        double b2 = side2 * side2;
+        double c2 = side3 * side3;
+        if (angleNumber == 1) {
+            return Math.acos((b2 + c2 - a2)
+                             / (2 * side2 * side3));
+        } else if (angleNumber == 2) {
+            return Math.acos((a2 + c2 - b2)
+                             / (2 * side1 * side3));
+        } else if (angleNumber == 3) {
+            return Math.acos((a2 + b2 - c2)
+                             / (2 * side1 * side2));
+        } else {
+            return -1;
+        }
+    }
+
+    /**
+     * Calculate the height relative to the specified side of the triangle.
+     * @param sideNumber - The side number (1, 2, or 3).
+     * @return The height in millimeters, or -1 if the triangle is
+     * not valid.
+     */
+    public double height(final int sideNumber) {
+        if (!isValid()) {
+            return -1;
+        }
+        double area = area();
+        if (sideNumber == 1) {
+            return (2 * area) / side1;
+        } else if (sideNumber == 2) {
+            return (2 * area) / side2;
+        } else if (sideNumber == 3) {
+            return (2 * area) / side3;
+        } else {
+            return -1;
+        }
+    }
+
+    /**
+     * Calculate the radius of the largest inscribed circle within the triangle.
+     * @return The radius in millimeters, or -1 if the triangle is not valid.
+     */
+    public double innerCircleRadius() {
+        if (!isValid()) {
+            return -1;
+        }
+        double area = area();
+        double semiPerimeter = semiPerimeter();
+        return area / semiPerimeter;
+    }
+
+    /**
+     * Calculate the radius of the circumscribed circle around the triangle.
+     * @return The radius in millimeters, or -1 if the triangle is not valid.
+     */
+    public double circumsicleRadius() {
+        if (!isValid()) {
+            return -1;
+        }
+        double a = side1;
+        double b = side2;
+        double c = side3;
+        double area = area();
+        return (a * b * c) / (4 * area);
     }
 }
