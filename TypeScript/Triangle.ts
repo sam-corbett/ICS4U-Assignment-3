@@ -90,13 +90,13 @@ class Triangle {
     } else if (this.side1 === this.side2 || this.side2 === this.side3 ||
                  this.side3 === this.side1) {
       if (this.isRightAngle()) {
-        return 'Isosceles Triangle with Right Angle'
+        return 'Right Isosceles Triangle'
       } else {
         return 'Isosceles Triangle'
       }
     } else {
       if (this.isRightAngle()) {
-        return 'Scalene Triangle with Right Angle'
+        return 'Right Scalence Triangle'
       } else {
         return 'Scalene Triangle'
       }
