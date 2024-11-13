@@ -27,12 +27,15 @@ public class Triangle {
      * @param side3 - The length of the third side.
      */
     public Triangle(
-        final double side1, final double side2, final double side3
-    ) {
+        final double side1,
+        final double side2,
+        final double side3
+        ) {
         this.side1 = side1;
         this.side2 = side2;
         this.side3 = side3;
     }
+
 
     /**
      * Get the length of the first side.
