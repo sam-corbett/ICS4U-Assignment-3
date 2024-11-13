@@ -26,7 +26,7 @@ public class Main {
         System.out.println(" → Circumcircle radius: " + testTriangle1.circumsicleRadius() + " mm");
         System.out.println("");
 
-        Triangle testTriangle1 = new Triangle(3, 3, 3);
+        Triangle testTriangle2 = new Triangle(3, 3, 3);
         System.out.println("Created a 3 mm by 3 mm by 3 mm triangle.");
         System.out.println(" → Is the triangle valid: " + testTriangle1.isValid());
         System.out.println(" → Semiperimeter: " + testTriangle1.semiPerimeter() + " mm");
@@ -42,7 +42,7 @@ public class Main {
         System.out.println(" → Circumcircle radius: " + testTriangle1.circumsicleRadius() + " mm");
         System.out.println("");
 
-        Triangle testTriangle1 = new Triangle(3, 4, 4);
+        Triangle testTriangle3 = new Triangle(3, 4, 4);
         System.out.println("Created a 3 mm by 4 mm by 4 mm triangle.");
         System.out.println(" → Is the triangle valid: " + testTriangle1.isValid());
         System.out.println(" → Semiperimeter: " + testTriangle1.semiPerimeter() + " mm");
@@ -58,7 +58,7 @@ public class Main {
         System.out.println(" → Circumcircle radius: " + testTriangle1.circumsicleRadius() + " mm");
         System.out.println("");
 
-        Triangle testTriangle1 = new Triangle(2, 3, 4);
+        Triangle testTriangle4 = new Triangle(2, 3, 4);
         System.out.println("Created a 2 mm by 3 mm by 4 mm triangle.");
         System.out.println(" → Is the triangle valid: " + testTriangle1.isValid());
         System.out.println(" → Semiperimeter: " + testTriangle1.semiPerimeter() + " mm");
@@ -74,7 +74,7 @@ public class Main {
         System.out.println(" → Circumcircle radius: " + testTriangle1.circumsicleRadius() + " mm");
         System.out.println("");
 
-        Triangle testTriangle1 = new Triangle(23, 3, 4);
+        Triangle testTriangle5 = new Triangle(23, 3, 4);
         System.out.println("Created a 2 mm by 3 mm by 4 mm triangle.");
         System.out.println(" → Is the triangle valid: " + testTriangle1.isValid());
         System.out.println(" → Semiperimeter: " + testTriangle1.semiPerimeter() + " mm");
