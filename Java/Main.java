@@ -31,29 +31,29 @@ public final class Main {
         Triangle testTriangle1 = new Triangle(3, 4, 5);
         System.out.println("Test #1:");
         System.out.println("Created a 3 mm by 4 mm by 5 mm triangle.");
-        System.out.println(" → Is the triangle valid: "
+        System.out.println(" -> Is the triangle valid: "
                 + testTriangle1.isValid());
-        System.out.println(" → Semiperimeter: "
+        System.out.println(" -> Semiperimeter: "
                 + df.format(testTriangle1.semiPerimeter()) + " mm");
-        System.out.println(" → Area: "
+        System.out.println(" -> Area: "
                 + df.format(testTriangle1.area()) + " mm²");
-        System.out.println(" → Type: "
+        System.out.println(" -> Type: "
                 + testTriangle1.getType());
-        System.out.println(" → Angle 1: "
+        System.out.println(" -> Angle 1: "
                 + df.format(testTriangle1.angle(1)) + " rad");
-        System.out.println(" → Angle 2: "
+        System.out.println(" -> Angle 2: "
                 + df.format(testTriangle1.angle(2)) + " rad");
-        System.out.println(" → Angle 3: "
+        System.out.println(" -> Angle 3: "
                 + df.format(testTriangle1.angle(3)) + " rad");
-        System.out.println(" → Height 1: "
+        System.out.println(" -> Height 1: "
                 + df.format(testTriangle1.height(1)) + " mm");
-        System.out.println(" → Height 2: "
+        System.out.println(" -> Height 2: "
                 + df.format(testTriangle1.height(2)) + " mm");
-        System.out.println(" → Height 3: "
+        System.out.println(" -> Height 3: "
                 + df.format(testTriangle1.height(3)) + " mm");
-        System.out.println(" → Inner circle radius: "
+        System.out.println(" -> Inner circle radius: "
                 + df.format(testTriangle1.innerCircleRadius()) + " mm");
-        System.out.println(" → Circumcircle radius: "
+        System.out.println(" -> Circumcircle radius: "
                 + df.format(testTriangle1.circumsicleRadius()) + " mm");
         System.out.println("");
 
