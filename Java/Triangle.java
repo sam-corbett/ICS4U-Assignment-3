@@ -22,18 +22,18 @@ public class Triangle {
 
     /**
      * Create a triangle.
-     * @param side1 - The length of the first side.
-     * @param side2 - The length of the second side.
-     * @param side3 - The length of the third side.
+     * @param side1Paramater - The length of the first side.
+     * @param side2Paramater - The length of the second side.
+     * @param side3Paramater - The length of the third side.
      */
     public Triangle(
         final double side1Paramater,
         final double side2Paramater,
         final double side3Paramater
         ) {
-        this.side1 = side1;
-        this.side2 = side2;
-        this.side3 = side3;
+        this.side1 = side1Paramater;
+        this.side2 = side2Paramater;
+        this.side3 = side3Paramater;
     }
 
 
