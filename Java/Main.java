@@ -33,7 +33,7 @@ public final class Main {
         System.out.println(" → Semiperimeter: "
                 + testTriangle1.semiPerimeter() + " mm");
         System.out.println(" → Area: "
-                + testTriangle1.area() + " mm\00B2");
+                + testTriangle1.area() + " mm\u00B2");
         System.out.println(" → Type: "
                 + testTriangle1.getType());
         System.out.println(" → Angle 1: "
@@ -63,7 +63,7 @@ public final class Main {
         System.out.println(" → Semiperimeter: "
                 + testTriangle2.semiPerimeter() + " mm");
         System.out.println(" → Area: "
-                + testTriangle2.area() + " mm\00B2");
+                + testTriangle2.area() + " mm\u00B2");
         System.out.println(" → Type: "
                 + testTriangle2.getType());
         System.out.println(" → Angle 1: "
@@ -93,7 +93,7 @@ public final class Main {
         System.out.println(" → Semiperimeter: "
                 + testTriangle3.semiPerimeter() + " mm");
         System.out.println(" → Area: "
-                + testTriangle3.area() + " mm\00B2");
+                + testTriangle3.area() + " mm\u00B2");
         System.out.println(" → Type: "
                 + testTriangle3.getType());
         System.out.println(" → Angle 1: "
@@ -123,7 +123,7 @@ public final class Main {
         System.out.println(" → Semiperimeter: "
                 + testTriangle4.semiPerimeter() + " mm");
         System.out.println(" → Area: "
-                + testTriangle4.area() + " mm\00B2");
+                + testTriangle4.area() + " mm\u00B2");
         System.out.println(" → Type: "
                 + testTriangle4.getType());
         System.out.println(" → Angle 1: "
@@ -153,7 +153,7 @@ public final class Main {
         System.out.println(" → Semiperimeter: "
                 + testTriangle5.semiPerimeter() + " mm");
         System.out.println(" → Area: "
-                + testTriangle5.area() + " mm\00B2");
+                + testTriangle5.area() + " mm\u00B2");
         System.out.println(" → Type: "
                 + testTriangle5.getType());
         System.out.println(" → Angle 1: "
