@@ -100,19 +100,19 @@ public class Triangle {
         if (!isValid()) {
             return "Invalid";
         } else if (side1 == side2 && side2 == side3) {
-            return "Equilateral";
+            return "Equilateral Triangle";
         } else if (side1 == side2 || side2 == side3
                    || side3 == side1) {
             if (isRightAngle()) {
-                return "Right angle and Isosceles";
+                return "Right Isosceles Triangle";
             } else {
-                return "Isosceles";
+                return "Isosceles Triangle";
             }
         } else {
             if (isRightAngle()) {
-                return "Right angle and Scalene";
+                return "Right Scalene Triangle";
             } else {
-                return "Scalene";
+                return "Scalene Triangle";
             }
         }
     }
