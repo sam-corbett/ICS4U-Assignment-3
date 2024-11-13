@@ -1,12 +1,4 @@
 /**
- * The 'Triangle' Class.
- *
- * @author: Sam Corbett
- * @version: 1.0
- * @since: 2024/11/13
- */
-
-/**
  * Class representing a triangle.
  */
 public class Triangle {
@@ -16,11 +8,11 @@ public class Triangle {
 
     /**
      * Create a triangle.
-     * @param side1 The length of the first side.
-     * @param side2 The length of the second side.
-     * @param side3 The length of the third side.
+     * @param side1 - The length of the first side.
+     * @param side2 - The length of the second side.
+     * @param side3 - The length of the third side.
      */
-    public Triangle(double side1, double side2, double side3) {
+    public Triangle(final double side1, final double side2, final double side3) {
         this.side1 = side1;
         this.side2 = side2;
         this.side3 = side3;
@@ -73,13 +65,12 @@ public class Triangle {
      * @return The area of the triangle, or -1 if the triangle is not valid.
      */
     public double area() {
-        if (!isValid()) return -1;
+        if (!isValid()) {
+            return -1;
+        }
         double semiPerimeter = semiPerimeter();
-        return Math.sqrt(semiPerimeter 
-          * (semiPerimeter - side1)
-          * (semiPerimeter - side2) 
-          * (semiPerimeter - side3)
-        );
+        return Math.sqrt(semiPerimeter * (semiPerimeter - side1) *
+                (semiPerimeter - side2) * (semiPerimeter - side3));
     }
 
     /**
@@ -90,18 +81,19 @@ public class Triangle {
         if (!isValid()) {
             return "Invalid";
         } else if (side1 == side2 && side2 == side3) {
-            return "Equilateral Triangle";
-        } else if (side1 == side2 || side2 == side3 || side3 == side1) {
+            return "Equilateral";
+        } else if (side1 == side2 || side2 == side3 || 
+                   side3 == side1) {
             if (isRightAngle()) {
-                return "Right Icosceles Triangle";
+                return "Right angle and Isosceles";
             } else {
-                return "Isosceles Triangle";
+                return "Isosceles";
             }
         } else {
             if (isRightAngle()) {
-                return "Right Scalene Triangle";
+                return "Right angle and Scalene";
             } else {
-                return "Scalene Triangle";
+                return "Scalene";
             }
         }
     }
@@ -111,11 +103,14 @@ public class Triangle {
      * @return True if the triangle is a right angle triangle,
      * false otherwise.
      */
+    // a2, b2, and c2 are square of each side
     private boolean isRightAngle() {
-        double a2 = Math.pow(side1, 2);
-        double b2 = Math.pow(side2, 2);
-        double c2 = Math.pow(side3, 2);
-        return (a2 + b2 == c2 || b2 + c2 == a2 || c2 + a2 == b2);
+        double a2 = side1 * side1;
+        double b2 = side2 * side2;
+        double c2 = side3 * side3;
+        return (a2 + b2 == c2 || 
+                b2 + c2 == a2 || 
+                c2 + a2 == b2);
     }
 
     /**
@@ -123,26 +118,33 @@ public class Triangle {
      * @return The semi-perimeter of the triangle.
      */
     public double semiPerimeter() {
-        if (!isValid()) return -1;
+        if (!isValid()) {
+            return -1;
+        }
         return perimeter() / 2;
     }
 
     /**
      * Calculate the specified angle of the triangle.
-     * @param angleNumber The angle number (1, 2, or 3).
+     * @param angleNumber - The angle number (1, 2, or 3).
      * @return The angle in radians, or -1 if the triangle is not valid.
      */
-    public double angle(int angleNumber) {
-        if (!isValid()) return -1;
-        double a2 = Math.pow(side1, 2);
-        double b2 = Math.pow(side2, 2);
-        double c2 = Math.pow(side3, 2);
+    public double angle(final int angleNumber) {
+        if (!isValid()) {
+            return -1;
+        }
+        double a2 = side1 * side1;
+        double b2 = side2 * side2;
+        double c2 = side3 * side3;
         if (angleNumber == 1) {
-            return Math.acos((b2 + c2 - a2) / (2 * side2 * side3));
+            return Math.acos((b2 + c2 - a2) / 
+                             (2 * side2 * side3));
         } else if (angleNumber == 2) {
-            return Math.acos((a2 + c2 - b2) / (2 * side1 * side3));
+            return Math.acos((a2 + c2 - b2) / 
+                             (2 * side1 * side3));
         } else if (angleNumber == 3) {
-            return Math.acos((a2 + b2 - c2) / (2 * side1 * side2));
+            return Math.acos((a2 + b2 - c2) / 
+                             (2 * side1 * side2));
         } else {
             return -1;
         }
@@ -150,12 +152,14 @@ public class Triangle {
 
     /**
      * Calculate the height relative to the specified side of the triangle.
-     * @param sideNumber The side number (1, 2, or 3).
+     * @param sideNumber - The side number (1, 2, or 3).
      * @return The height in millimeters, or -1 if the triangle is
      * not valid.
      */
-    public double height(int sideNumber) {
-        if (!isValid()) return -1;
+    public double height(final int sideNumber) {
+        if (!isValid()) {
+            return -1;
+        }
         double area = area();
         if (sideNumber == 1) {
             return (2 * area) / side1;
@@ -173,7 +177,9 @@ public class Triangle {
      * @return The radius in millimeters, or -1 if the triangle is not valid.
      */
     public double innerCircleRadius() {
-        if (!isValid()) return -1;
+        if (!isValid()) {
+            return -1;
+        }
         double area = area();
         double semiPerimeter = semiPerimeter();
         return area / semiPerimeter;
@@ -184,7 +190,9 @@ public class Triangle {
      * @return The radius in millimeters, or -1 if the triangle is not valid.
      */
     public double circumsicleRadius() {
-        if (!isValid()) return -1;
+        if (!isValid()) {
+            return -1;
+        }
         double a = side1;
         double b = side2;
         double c = side3;
