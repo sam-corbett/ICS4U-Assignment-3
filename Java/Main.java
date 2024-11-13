@@ -31,7 +31,7 @@ public final class Main {
         System.out.println(" → Is the triangle valid: "
                 + testTriangle1.isValid());
         System.out.println(" → Semiperimeter: "
-                + Math.round(testTriangle1.semiPerimeter(), 4) + " mm");
+                + testTriangle1.semiPerimeter() + " mm");
         System.out.println(" → Area: "
                 + testTriangle1.area() + " mm²");
         System.out.println(" → Type: "
