@@ -12,7 +12,11 @@ public class Triangle {
      * @param side2 - The length of the second side.
      * @param side3 - The length of the third side.
      */
-    public Triangle(final double side1, final double side2, final double side3) {
+    public Triangle(
+        final double side1,
+        final double side2,
+        final double side3
+    ) {
         this.side1 = side1;
         this.side2 = side2;
         this.side3 = side3;
@@ -55,9 +59,9 @@ public class Triangle {
      * @return True if the triangle is valid, false otherwise.
      */
     public boolean isValid() {
-        return (side1 + side2 > side3 &&
-                side2 + side3 > side1 &&
-                side3 + side1 > side2);
+        return (side1 + side2 > side3
+                && side2 + side3 > side1
+                && side3 + side1 > side2);
     }
 
     /**
@@ -69,8 +73,8 @@ public class Triangle {
             return -1;
         }
         double semiPerimeter = semiPerimeter();
-        return Math.sqrt(semiPerimeter * (semiPerimeter - side1) *
-                (semiPerimeter - side2) * (semiPerimeter - side3));
+        return Math.sqrt(semiPerimeter * (semiPerimeter - side1)
+                * (semiPerimeter - side2) * (semiPerimeter - side3));
     }
 
     /**
@@ -82,8 +86,8 @@ public class Triangle {
             return "Invalid";
         } else if (side1 == side2 && side2 == side3) {
             return "Equilateral";
-        } else if (side1 == side2 || side2 == side3 || 
-                   side3 == side1) {
+        } else if (side1 == side2 || side2 == side3
+                   || side3 == side1) {
             if (isRightAngle()) {
                 return "Right angle and Isosceles";
             } else {
@@ -108,9 +112,9 @@ public class Triangle {
         double a2 = side1 * side1;
         double b2 = side2 * side2;
         double c2 = side3 * side3;
-        return (a2 + b2 == c2 || 
-                b2 + c2 == a2 || 
-                c2 + a2 == b2);
+        return (a2 + b2 == c2
+                || b2 + c2 == a2
+                || c2 + a2 == b2);
     }
 
     /**
@@ -137,14 +141,14 @@ public class Triangle {
         double b2 = side2 * side2;
         double c2 = side3 * side3;
         if (angleNumber == 1) {
-            return Math.acos((b2 + c2 - a2) / 
-                             (2 * side2 * side3));
+            return Math.acos((b2 + c2 - a2)
+                             / (2 * side2 * side3));
         } else if (angleNumber == 2) {
-            return Math.acos((a2 + c2 - b2) / 
-                             (2 * side1 * side3));
+            return Math.acos((a2 + c2 - b2)
+                             / (2 * side1 * side3));
         } else if (angleNumber == 3) {
-            return Math.acos((a2 + b2 - c2) / 
-                             (2 * side1 * side2));
+            return Math.acos((a2 + b2 - c2)
+                             / (2 * side1 * side2));
         } else {
             return -1;
         }

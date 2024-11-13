@@ -5,7 +5,7 @@
  * @version: 1.0
  * @since: 2024/11/13
  */
-public class Main {
+public final class Main {
     /**
     * Prevent instantiation
     * Throw an exception IllegalStateException.
@@ -34,7 +34,7 @@ public class Main {
                 + testTriangle1.semiPerimeter() + " mm");
         System.out.println(" → Area: "
                 + testTriangle1.area() + " mm²");
-        System.out.println(" → Type: " 
+        System.out.println(" → Type: "
                 + testTriangle1.getType());
         System.out.println(" → Angle 1: "
                 + testTriangle1.angle(1) + " rad");
