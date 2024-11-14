@@ -12,7 +12,7 @@ import Triangle from './Triangle.ts'
 console.log('')
 
 const testTriangle1 = new Triangle(3, 4, 5)
-console.log("Test #1:")
+console.log('Test #1:')
 console.log('Created a 3 mm by 4 mm by 5 mm triangle.')
 console.log(' → Is the triangle valid: ' + testTriangle1.isValid().toString())
 console.log(' → Semiperimeter: ' +
@@ -32,7 +32,7 @@ console.log(' → Circumcircle radius: ' +
 console.log('')
 
 const testTriangle2 = new Triangle(3, 3, 3)
-console.log("Test #2:")
+console.log('Test #2:')
 console.log('Created a 3 mm by 3 mm by 3 mm triangle.')
 console.log(' → Is the triangle valid: ' + testTriangle2.isValid().toString())
 console.log(' → Semiperimeter: ' +
@@ -52,7 +52,7 @@ console.log(' → Circumcircle radius: ' +
 console.log('')
 
 const testTriangle3 = new Triangle(3, 4, 4)
-console.log("Test #3:")
+console.log('Test #3:')
 console.log('Created a 3 mm by 4 mm by 4 mm triangle.')
 console.log(' → Is the triangle valid: ' + testTriangle3.isValid().toString())
 console.log(' → Semiperimeter: ' +
@@ -72,7 +72,7 @@ console.log(' → Circumcircle radius: ' +
 console.log('')
 
 const testTriangle4 = new Triangle(2, 3, 4)
-console.log("Test #4:")
+console.log('Test #4:')
 console.log('Created a 2 mm by 3 mm by 4 mm triangle.')
 console.log(' → Is the triangle valid: ' + testTriangle4.isValid().toString())
 console.log(' → Semiperimeter: ' +
@@ -92,7 +92,7 @@ console.log(' → Circumcircle radius: ' +
 console.log('')
 
 const testTriangle5 = new Triangle(23, 4, 6)
-console.log("Test #5:")
+console.log('Test #5:')
 console.log('Created a 23 mm by 3 mm by 4 mm triangle.')
 console.log(' → Is the triangle valid: ' + testTriangle5.isValid().toString())
 console.log(' → Semiperimeter: ' +
